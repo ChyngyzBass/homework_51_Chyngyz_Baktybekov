@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о коте</title>
+</head>
+<body>
+    <h1>{{ cat.name }} - Кот</h1>
+    
+    <!-- Отображаем аватарку кота в зависимости от его состояния -->
+    <img src="{{ cat.get_avatar }}" alt="Аватар {{ cat.name }}" style="width: 250px; height: 200px;">
+
+    <p>Возраст: {{ cat.age }} лет</p>
+    <p>Уровень сытости: {{ cat.hunger }}%</p>
+    <p>Уровень счастья: {{ cat.happiness }}%</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" name="action" value="feed">Покормить</button>
+        <button type="submit" name="action" value="play">Играть</button>
+        <button type="submit" name="action" value="sleep">Поспать</button>
+    </form>
+</body>
+</html>

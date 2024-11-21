@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задайте имя коту</title>
+</head>
+<body>
+    <h1>Привет! Давайте зададим имя вашему коту!</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Имя кота:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Задать имя</button>
+    </form>
+</body>
+</html>
